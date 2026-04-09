@@ -108,14 +108,14 @@
 <body>
 <div class="card">
   <div class="logo">📁</div>
-  <h2>Acceso a documentos</h2>
-  <p class="subtitulo">Ingresa tu número de referencia para ver tu carpeta</p>
+  <h2>Acceso a Documentos</h2>
+  <p class="subtitulo">Ingresa el número de control del equipo para ver tu carpeta</p>
 
-  <label for="referencia">Número de referencia</label>
+  <label for="control">Número de control</label>
   <input
     type="text"
-    id="referencia"
-    placeholder="Ej: REF001"
+    id="control"
+    placeholder="Ej: PAT1"
     maxlength="20"
     autocomplete="off"
   />
@@ -128,11 +128,11 @@
   <div class="divisor">otras opciones</div>
 
   <!-- Botón reportar falla -->
-  <button class="btn-secundario btn-falla" onclick="window.open('https://TU-LINK-REPORTE-AQUI', '_blank')">
+  <button class="btn-secundario btn-falla" onclick="window.open('https://www.jotform.com/form/252686464154868')">
     <span class="icono">🔧</span>
     <span class="texto">
       Reportar falla de equipo
-      <span>Envía un reporte al área de mantenimiento</span>
+      <span>Envía un reporte al área de Biomédica</span>
     </span>
   </button>
 
@@ -145,7 +145,8 @@
     </span>
   </button>
 
-  <p class="footer">Acceso de solo lectura · Sin necesidad de cuenta</p>
+  <p class="footer">Acceso de solo lectura</p>
+  <p class="footer">Si tiene dudas contacte al departamento de Ingenieria Biomédica</p>
 </div>
 
 <script>
@@ -157,11 +158,11 @@
   };
 
   function acceder() {
-    const ref = document.getElementById("referencia").value.trim().toUpperCase();
+    const ref = document.getElementById("control").value.trim().toUpperCase();
     const error = document.getElementById("error");
 
     if (!ref) {
-      error.textContent = "⚠️ Por favor ingresa un número de referencia.";
+      error.textContent = "⚠️ Por favor ingresa un número de control.";
       error.style.display = "block";
       return;
     }
@@ -176,7 +177,7 @@
     }
   }
 
-  document.getElementById("referencia").addEventListener("keypress", function(e) {
+  document.getElementById("control").addEventListener("keypress", function(e) {
     if (e.key === "Enter") acceder();
   });
 </script>
